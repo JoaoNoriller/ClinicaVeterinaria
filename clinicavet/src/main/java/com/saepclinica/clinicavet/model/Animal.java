@@ -13,9 +13,10 @@ public class Animal {
     private Long id;
 
     private String nome;
-    private String raça;
+    private String raca;
     private String genero;
     private String dono;
+    private String procedimento;
 
     public Long getId() {
         return id;
@@ -27,11 +28,11 @@ public class Animal {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getRaça() {
-        return raça;
+    public String getRaca() {
+        return raca;
     }
-    public void setRaça(String raça) {
-        this.raça = raça;
+    public void setRaça(String raca) {
+        this.raca = raca;
     }
     public String getGenero() {
         return genero;
@@ -44,6 +45,14 @@ public class Animal {
     }
     public void setDono(String dono) {
         this.dono = dono;
+    }
+
+    public String getProcedimento() {
+        return procedimento;
+    }
+
+    public void setProcedimento(String procedimento) {
+        this.procedimento = procedimento;
     }
     
 }

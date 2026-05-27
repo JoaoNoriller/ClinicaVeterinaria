@@ -6,14 +6,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.servlet.http.HttpSession;
 
-
 @Controller
 public class PrincipalController {
 
     @GetMapping("/princiapl")
     public String exibirPrincipal(HttpSession session) {
 
-        if (session.getAttribute("veterinario") == null){
+        if (session.getAttribute("veterinario") == null) {
             return "redirect:login";
         }
 
@@ -21,9 +20,9 @@ public class PrincipalController {
     }
 
     @PostMapping("/logout")
-    public String logout(HttpSession session) {
-        session.invalidate();
+    public String logout(HttpSession sessao) {
+        sessao.invalidate();
         return "redirect:/login";
+
     }
-        
 }

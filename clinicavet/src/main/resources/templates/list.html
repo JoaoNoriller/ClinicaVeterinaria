@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title>Consulta - Clinica Veterinaria</title>
+</head>
+<body>
+    <h1>Lista de Consulta</h1>
+     <a href="/principal">Voltar a tela principal</a>
+
+     <form method="get" action="/consultas">
+        <input
+        type="text"
+        name="buscaConsulta"
+        th:value="${buscaConsulta}"
+        placeholder="Buscar consulta..."
+      />
+      <button type="submit">Listar Consultas</button>
+    </form>
+</body>
+</html>

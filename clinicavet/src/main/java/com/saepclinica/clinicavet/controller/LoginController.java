@@ -40,5 +40,7 @@ public class LoginController {
 
         model.addAttribute("erro", "login ou senha incorretos!");
         return "login";
+        
     }
+
 }

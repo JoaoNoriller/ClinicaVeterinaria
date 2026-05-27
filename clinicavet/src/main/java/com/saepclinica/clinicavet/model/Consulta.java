@@ -25,7 +25,7 @@ public class Consulta {
     private  Veterinario veterinario;
 
     private String nome;
-    private String raça;
+    private String raca;
     private String genero;
     private String dono;
     private LocalDate dataconsulta;
@@ -54,10 +54,10 @@ public class Consulta {
         this.nome = nome;
     }
     public String getRaça() {
-        return raça;
+        return raca;
     }
     public void setRaça(String raça) {
-        this.raça = raça;
+        this.raca = raça;
     }
     public String getGenero() {
         return genero;
