@@ -6,7 +6,8 @@
     <title>Clinica Veterinaria</title>
 </head>
 <body>
-    <h1>Bem vindo, <span th:text="${session.funcionario.nome}"></span></h1>
+    <h1>Bem vindo, <span th:text="${session.veterinario.nome}"></span></h1>
+    <a href="/animais">Cadastro de animais</a>
     <form method="post" action="/logout">
       <button type="submit">Sair</button>  
     </form>

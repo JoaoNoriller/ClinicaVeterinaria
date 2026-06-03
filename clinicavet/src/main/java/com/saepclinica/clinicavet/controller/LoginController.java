@@ -18,23 +18,19 @@ public class LoginController {
     @Autowired
     private VeterinarioRepository veterinarioRepository;
 
-    public String getMethodName(@RequestParam String param) {
-        return new String();
-    }
-
     @GetMapping("/login")
     public String exibirLogin() {
         return "login";
     }
 
     @PostMapping("/login")
-    public String ProcessamentoLogin(@RequestParam String login, @RequestParam String senha, HttpSession session,
+    public String ProcessamentoLogin(@RequestParam String login, @RequestParam String senha, HttpSession sessao,
             Model model) {
 
         Veterinario ven = veterinarioRepository.findByLogin(login);
 
         if (ven != null && ven.getSenha().equals(senha)) {
-            session.setAttribute("veterinario", ven);
+            sessao.setAttribute("veterinario", ven);
             return "redirect:/principal";
         }
 

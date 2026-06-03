@@ -9,10 +9,10 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class PrincipalController {
 
-    @GetMapping("/princiapl")
-    public String exibirPrincipal(HttpSession session) {
+    @GetMapping("/principal")
+    public String exibirPrincipal(HttpSession sessao) {
 
-        if (session.getAttribute("veterinario") == null) {
+        if (sessao.getAttribute("veterinario") == null) {
             return "redirect:login";
         }
 

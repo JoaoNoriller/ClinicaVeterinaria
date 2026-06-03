@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org/">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Editar Consulta - Clinica Veterinária</title>
+  </head>
+  <body>
+    <h1>Editar Consulta</h1>
+    <a href="/animais">Voltar à lista</a>
+
+    <form method="post" action="/animais/salvar" th:object="${consulta}">
+      <input type="hidden" th:field="*{id}" />
+
+      <label>Nome</label>
+      <input type="text" th:field="*{nome}" /><br />
+
+      <label>Raça</label>
+      <input type="text" th:field="*{raça}" /><br />
+
+      <label>Gênero</label>
+      <input type="text" th:field="*{genero}" /><br />
+
+      <label>Dono</label>
+      <input type="text" th:field="*{dono}" /><br />
+
+      <label>Data da Consulta</label>
+      <input type="date" th:field="*{dataconsulta}" /><br />
+
+      <label>Qtd. Veterinário</label>
+      <input type="number" th:field="*{vetquantidade}" /><br />
+
+      <label>Procedimento</label>
+      <input type="text" th:field="*{procedimento}" /><br />
+
+      <button type="submit">Atualizar Consulta</button>
+    </form>
+  </body>
+</html>

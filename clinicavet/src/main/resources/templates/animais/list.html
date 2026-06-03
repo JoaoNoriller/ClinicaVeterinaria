@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title- Clinica Veterinária</title>
+</head>
+<body>
+    <h1>Lista de Animais</h1>
+    <a href="/principal">Voltar a tela principal</a>
+
+    <form method="get" action="/animais">
+        <input type="text" name="buscaAnimal" th:value="${buscaAnimal}" placeholder="Buscar Animal..." />
+        <button type="submit">Listar Animal</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>Nome</th>
+            <th>Raça</th>
+            <th>Gênero</th>
+            <th>Dono</th>
+            <th>Procedimento</th>
+            <th>Ações</th>
+        </tr>
+        <tr th:each="animais : ${animais}">
+            <td th:text="${animais.nome}"></td>
+            <td th:text="${animais.raca}"></td>
+            <td th:text="${animais.genero}"></td>
+            <td th:text="${animais.dono}"></td>
+            <td th:text="${animais.procedimento}"></td>
+            <td>
+                <a th:href="@{/animais/editar/{id}(id=${animais.id})}">Editar</a>
+
+                <form th:action="@{/animais/deletar/{id}(id=${animais.id})}" method="post">
+                    <button type="submit" onclick="return confirm('Deseja excluir esse animal?');">
+                        Excluir
+                    </button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Nova Consulta</h2>
+    <form method="post" action="/animais/salvar">
+        <label>Nome</label>
+        <input type="text" name="nome" /><br />
+
+        <label>Raça</label>
+        <input type="text" name="raca" /><br />
+
+        <label>Gênero</label>
+        <input type="text" name="genero" /><br />
+
+        <label>Dono</label>
+        <input type="text" name="dono" /><br />
+
+        <label>Procedimento</label>
+        <input type="text" name="procedimento" /><br />
+
+        <button type="submit">Criar Animal</button>
+    </form>
+</body>
+</html>

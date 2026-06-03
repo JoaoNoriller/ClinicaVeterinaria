@@ -30,6 +30,7 @@ public class Consulta {
     private String dono;
     private LocalDate dataconsulta;
     private int vetquantidade;
+    private String procedimento;
 
     public Long getId() {
         return id;
@@ -82,6 +83,14 @@ public class Consulta {
     }
     public void setVetquantidade(int vetquantidade) {
         this.vetquantidade = vetquantidade;
+    }
+
+    public String getProcedimento() {
+        return procedimento;
+    }
+
+    public void setProcedimento(String procedimento) {
+        this.procedimento = procedimento;
     }
 
 }
